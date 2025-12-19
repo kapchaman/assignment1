@@ -18,7 +18,7 @@ public class LibraryApp {
         // main program loop
         while (running) {
             printMenu();
-            System.out.print("Choose an option: ");
+            System.out.print("choose an option: ");
 
             int choice = readInt();
 
@@ -52,20 +52,20 @@ public class LibraryApp {
     }
 
     private void printMenu() {
-        System.out.println("\nWelcome to Library App!");
-        System.out.println("1. Print all books");
-        System.out.println("2. Add new book");
-        System.out.println("3. Search books by title");
-        System.out.println("4. Borrow a book");
-        System.out.println("5. Return a book");
-        System.out.println("6. Delete a book by id");
-        System.out.println("7. Quit");
+        System.out.println("\nwelcome to Library App!");
+        System.out.println("1. print all books");
+        System.out.println("2. add new book");
+        System.out.println("3. search books by title");
+        System.out.println("4. borrow a book");
+        System.out.println("5. return a book");
+        System.out.println("6. delete a book by id");
+        System.out.println("7. quit");
     }
 
-    // prints all books from the list
+    // prints all books
     private void showBooks() {
         if (books.isEmpty()) {
-            System.out.println("No books in the library");
+            System.out.println("no books in the library");
             return;
         }
 
@@ -75,26 +75,26 @@ public class LibraryApp {
     }
 
     private void addBook() {
-        System.out.print("Enter title: ");
+        System.out.print("enter title: ");
         String title = scanner.nextLine();
 
-        System.out.print("Enter author: ");
+        System.out.print("enter author: ");
         String author = scanner.nextLine();
 
-        System.out.print("Enter year: ");
+        System.out.print("enter year: ");
         int year = readInt();
 
         try {
             Book book = new Book(title, author, year);
             books.add(book);
-            System.out.println("Book was added.");
+            System.out.println("book was added.");
         } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("error: " + e.getMessage());
         }
     }
 
     private void searchByTitle() {
-        System.out.print("Enter part of the title: ");
+        System.out.print("enter part of the title: ");
         String text = scanner.nextLine().toLowerCase();
 
         boolean found = false;
@@ -107,7 +107,7 @@ public class LibraryApp {
         }
 
         if (!found) {
-            System.out.println("Nothing found.");
+            System.out.println("nothing found.");
         }
     }
 
